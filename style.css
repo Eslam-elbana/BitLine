@@ -1,23 +1,36 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #0d47a1; /* أزرق فاخر */
+  color: white;
+  line-height: 1.6;
+}
+
 /* Header احترافي */
 header {
-  position: fixed; /* يبقى ثابت فوق الصفحة */
+  position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(11, 61, 145, 0.95); /* أزرق داكن مع شفافية خفيفة */
+  background-color: rgba(11, 61, 145, 0.95);
   color: white;
   padding: 15px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* ظل احترافي */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   z-index: 1000;
   transition: background-color 0.3s, padding 0.3s;
 }
 
-/* تغيير شكل الهيدر عند التمرير */
 header.scrolled {
-  background-color: #0b3d91; /* أزرق غامق عند التمرير */
+  background-color: #0b3d91;
   padding: 10px 0;
 }
 
-/* تصميم nav */
 nav {
   display: flex;
   justify-content: space-between;
@@ -26,15 +39,13 @@ nav {
   margin: auto;
 }
 
-/* شعار الموقع */
 nav .logo {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
-  color: #64b5f6; /* أزرق فاتح للشعار */
+  color: #64b5f6;
 }
 
-/* قائمة التنقل */
 nav ul {
   list-style: none;
   display: flex;
@@ -50,15 +61,82 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-/* تأثير Hover */
 nav ul li a:hover,
 nav ul li a.active {
-  background-color: #64b5f6; /* أزرق فاتح للخلفية */
-  color: #0b3d91; /* نص الهيدر يصبح أزرق غامق */
-  transform: translateY(-2px); /* رفع بسيط عند Hover */
+  background-color: #64b5f6;
+  color: #0b3d91;
+  transform: translateY(-2px);
 }
 
-/* تأثير الظل عند Hover */
 nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn, .download-btn {
+  background-color: #64b5f6;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover, .download-btn:hover {
+  background-color: #42a5f5;
+}
+
+/* About Section */
+.about {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+  background-color: #1565c0;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+/* Downloads Page */
+.downloads-hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* Hero Background Transition handled in JS */
