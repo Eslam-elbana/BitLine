@@ -1,25 +1,23 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Body */
-body {
-  background-color: #0d47a1; /* أزرق داكن فاخر للـ IT */
-  color: white; /* نص أبيض واضح على الخلفية الزرقاء */
-  line-height: 1.6;
-}
-
-/* Header */
+/* Header احترافي */
 header {
-  background-color: #1565c0; /* أزرق أفتح قليلاً لتمييز الهيدر */
+  position: fixed; /* يبقى ثابت فوق الصفحة */
+  top: 0;
+  width: 100%;
+  background-color: rgba(11, 61, 145, 0.95); /* أزرق داكن مع شفافية خفيفة */
   color: white;
-  padding: 20px 0;
+  padding: 15px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* ظل احترافي */
+  z-index: 1000;
+  transition: background-color 0.3s, padding 0.3s;
 }
 
+/* تغيير شكل الهيدر عند التمرير */
+header.scrolled {
+  background-color: #0b3d91; /* أزرق غامق عند التمرير */
+  padding: 10px 0;
+}
+
+/* تصميم nav */
 nav {
   display: flex;
   justify-content: space-between;
@@ -28,35 +26,39 @@ nav {
   margin: auto;
 }
 
+/* شعار الموقع */
 nav .logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
+  letter-spacing: 1px;
+  color: #64b5f6; /* أزرق فاتح للشعار */
 }
 
+/* قائمة التنقل */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
+/* تأثير Hover */
 nav ul li a:hover,
 nav ul li a.active {
-  color: #64b5f6; /* أزرق فاتح لتأثير hover */
+  background-color: #64b5f6; /* أزرق فاتح للخلفية */
+  color: #0b3d91; /* نص الهيدر يصبح أزرق غامق */
+  transform: translateY(-2px); /* رفع بسيط عند Hover */
 }
 
-/* Hero Section */
-.hero, .downloads-hero {
-  text-align: center;
-  padding: 100px 20px;
-  background-color: #1976d2; /* أزرق متوسط جذاب */
-  color: white;
+/* تأثير الظل عند Hover */
+nav ul li a:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
-.hero h1, .
