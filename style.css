@@ -196,4 +196,21 @@ footer {
   animation: shine 4s infinite linear;
 }
 
+#lang-btn {
+  background: #5ea0ff;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+#lang-btn:hover {
+  background: #3c7aff;
+}
+
+
+
 
