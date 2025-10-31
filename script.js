@@ -47,4 +47,33 @@ langBtn.addEventListener("click", () => {
   const downloadsTitle = document.querySelector(".downloads h2");
   const contactTitle = document.querySelector(".contact h2");
   const aboutMeTitle = document.querySelector(".aboutme h2");
-  const footerText = document.querySelector("footer
+  const footerText = document.querySelector("footer p");
+
+  if (!isArabic) {
+    // التحويل للعربية
+    heroTitle.innerHTML = "قسم <span class='highlight'>نظم المعلومات IT</span>";
+    aboutTitle.textContent = "ما هو قسم الـ IT؟";
+    aboutText.textContent =
+      "قسم تكنولوجيا المعلومات هو القلب النابض لأي مؤسسة عصرية. يختص بدراسة الشبكات، البرمجة، قواعد البيانات، والأمن السيبراني. يهدف القسم إلى إعداد كوادر قادرة على التعامل مع التكنولوجيا الحديثة وتطوير حلول ذكية للمشكلات التقنية.";
+    downloadsTitle.textContent = "تحميل البرامج";
+    contactTitle.textContent = "تواصل معنا";
+    aboutMeTitle.textContent = "عن المصمم";
+    footerText.textContent = "جميع الحقوق محفوظة © لموقع BitLine — تصميم: إسلام البنا";
+    langBtn.textContent = "EN";
+    isArabic = true;
+    document.body.style.direction = "rtl";
+  } else {
+    // العودة للإنجليزية
+    heroTitle.innerHTML = "Welcome to <span class='highlight'>BitLine</span>";
+    aboutTitle.textContent = "About IT";
+    aboutText.textContent =
+      "The IT department is the backbone of any modern organization, focusing on networking, programming, databases, and cybersecurity — preparing professionals for the digital future.";
+    downloadsTitle.textContent = "Downloads";
+    contactTitle.textContent = "Contact Us";
+    aboutMeTitle.textContent = "About the Developer";
+    footerText.textContent = "All rights reserved © BitLine — Designed by Eslam Elbana";
+    langBtn.textContent = "AR";
+    isArabic = false;
+    document.body.style.direction = "ltr";
+  }
+});
