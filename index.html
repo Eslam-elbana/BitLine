@@ -1,110 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BitLine — IT Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BitLine | IT Department</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="logo">BitLine</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="downloads.html">Downloads</a></li>
+    <div class="logo">
+      <span class="logo-text">BitLine</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About IT</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Canvas background (animated network) -->
-  <div id="bg-canvas-wrap">
-    <canvas id="networkCanvas"></canvas>
-  </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to <span class="highlight">BitLine</span></h1>
+      <p>Your Gateway to the World of Information Technology</p>
+    </div>
+    <canvas id="bg-animation"></canvas>
+  </section>
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-inner">
-        <h1>BitLine</h1>
-        <p class="tagline">Your Network · Your Code · Your Security</p>
-        <p class="subtitle">
-          BitLine is a professional IT department delivering tools, guides and solutions in
-          software development, networking, cybersecurity and system administration.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="downloads.html">Get Tools</a>
-          <a class="btn ghost" href="#it-overview">What is IT?</a>
-        </div>
+  <section id="about" class="about fade-section">
+    <h2>What is Information Technology (IT)?</h2>
+    <p>
+      Information Technology (IT) refers to the use of computers, networks, and digital systems to process, store, and share information.
+      It plays a vital role in every aspect of modern life, from business and communication to education and entertainment.
+    </p>
+    <p>
+      The IT field includes several key areas such as:
+    </p>
+    <ul>
+      <li><b>Networking:</b> Building and maintaining computer networks that connect people and devices.</li>
+      <li><b>Software Development:</b> Creating applications, websites, and systems that solve real-world problems.</li>
+      <li><b>Cybersecurity:</b> Protecting systems and data from unauthorized access or attacks.</li>
+      <li><b>Data Science:</b> Analyzing and visualizing data to make smarter decisions.</li>
+      <li><b>Cloud Computing:</b> Managing and deploying services and resources through the internet.</li>
+    </ul>
+  </section>
+
+  <section id="downloads" class="downloads fade-section">
+    <h2>Essential IT Tools</h2>
+    <div class="programs">
+      <div class="program">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Wireshark_Logo.svg" alt="Wireshark">
+        <h3>Wireshark</h3>
+        <p>Network analysis tool for professionals.</p>
+        <button class="btn download-btn" data-link="https://www.wireshark.org/download.html">Download</button>
+        <div class="progress-bar"></div>
       </div>
-      <div class="hero-thumb">
-        <img src="images/hero-thumb.jpg" alt="IT illustration">
+      <div class="program">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="Git">
+        <h3>Git</h3>
+        <p>Version control for developers.</p>
+        <button class="btn download-btn" data-link="https://git-scm.com/downloads">Download</button>
+        <div class="progress-bar"></div>
       </div>
-    </section>
-
-    <section class="about" id="it-overview">
-      <h2>What is Information Technology (IT)?</h2>
-
-      <div class="it-grid">
-        <article>
-          <h3>Definition</h3>
-          <p>
-            Information Technology (IT) refers to the use of computers, networks, software,
-            and services to store, process, transmit and secure information. IT enables
-            modern businesses and services, powering everything from websites to enterprise systems.
-          </p>
-        </article>
-
-        <article>
-          <h3>Major domains</h3>
-          <ul>
-            <li><strong>Software Development:</strong> building applications, web apps, APIs and automation.</li>
-            <li><strong>Networking:</strong> design and management of LAN/WAN, routers, switches, wireless.</li>
-            <li><strong>System Administration & DevOps:</strong> servers, virtualization, CI/CD, cloud infra.</li>
-            <li><strong>Cybersecurity:</strong> protection, detection, incident response, penetration testing.</li>
-            <li><strong>Data & Databases:</strong> storage, queries, ETL, analytics and business intelligence.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Common tools</h3>
-          <p>
-            IDEs (VS Code, PyCharm), packet analysers (Wireshark), DB tools (MySQL Workbench),
-            version control (Git), container tools (Docker), cloud consoles (AWS/GCP/Azure).
-          </p>
-        </article>
-
-        <article>
-          <h3>Typical career paths</h3>
-          <p>
-            Junior developer → Senior dev → Tech lead / Architect; Network engineer → Security engineer;
-            Sysadmin → DevOps engineer; Data analyst → Data engineer → Data scientist.
-          </p>
-        </article>
-
-        <article>
-          <h3>How to start (practical path)</h3>
-          <ol>
-            <li>Learn basics: computer systems, Linux, Git, networking fundamentals.</li>
-            <li>Pick a focus: development, networking, or security.</li>
-            <li>Build projects, use real tools, practice on labs and contribute to open-source.</li>
-          </ol>
-        </article>
-
-        <article>
-          <h3>Best practices</h3>
-          <p>
-            Keep systems updated, use version control, automate repetitive tasks, apply the principle
-            of least privilege, and monitor systems for anomalies.
-          </p>
-        </article>
+      <div class="program">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Visual_Studio_Code_1.35_icon.svg" alt="VS Code">
+        <h3>VS Code</h3>
+        <p>Powerful coding editor from Microsoft.</p>
+        <button class="btn download-btn" data-link="https://code.visualstudio.com/download">Download</button>
+        <div class="progress-bar"></div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-section">
+    <h2>Contact Us</h2>
+    <p>Have questions or feedback? Reach out to us at <b>support@bitline.tech</b></p>
+  </section>
 
   <footer>
-    <div class="footer-inner">
-      <p>© 2025 BitLine — All rights reserved • Crafted for IT professionals</p>
-    </div>
+    <p>© 2025 BitLine | Designed with 💙 for IT Professionals</p>
   </footer>
 
   <script src="script.js"></script>
