@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BitLine | IT Department</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BitLine — IT Department</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,27 +17,94 @@
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="fade-in">Welcome to <span>BitLine</span></h1>
-      <p class="fade-in-delay">
-        Explore the power of IT — designed by professionals who live technology.
-      </p>
-      <a href="downloads.html" class="btn fade-in-delay2">Get Started</a>
-    </div>
-  </section>
+  <!-- Canvas background (animated network) -->
+  <div id="bg-canvas-wrap">
+    <canvas id="networkCanvas"></canvas>
+  </div>
 
-  <section class="about">
-    <h2>About BitLine</h2>
-    <p>
-      BitLine is an innovative IT department that provides powerful tools,
-      professional guidance, and reliable software for developers and tech enthusiasts.
-    </p>
-  </section>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1>BitLine</h1>
+        <p class="tagline">Your Network · Your Code · Your Security</p>
+        <p class="subtitle">
+          BitLine is a professional IT department delivering tools, guides and solutions in
+          software development, networking, cybersecurity and system administration.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="downloads.html">Get Tools</a>
+          <a class="btn ghost" href="#it-overview">What is IT?</a>
+        </div>
+      </div>
+      <div class="hero-thumb">
+        <img src="images/hero-thumb.jpg" alt="IT illustration">
+      </div>
+    </section>
+
+    <section class="about" id="it-overview">
+      <h2>What is Information Technology (IT)?</h2>
+
+      <div class="it-grid">
+        <article>
+          <h3>Definition</h3>
+          <p>
+            Information Technology (IT) refers to the use of computers, networks, software,
+            and services to store, process, transmit and secure information. IT enables
+            modern businesses and services, powering everything from websites to enterprise systems.
+          </p>
+        </article>
+
+        <article>
+          <h3>Major domains</h3>
+          <ul>
+            <li><strong>Software Development:</strong> building applications, web apps, APIs and automation.</li>
+            <li><strong>Networking:</strong> design and management of LAN/WAN, routers, switches, wireless.</li>
+            <li><strong>System Administration & DevOps:</strong> servers, virtualization, CI/CD, cloud infra.</li>
+            <li><strong>Cybersecurity:</strong> protection, detection, incident response, penetration testing.</li>
+            <li><strong>Data & Databases:</strong> storage, queries, ETL, analytics and business intelligence.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Common tools</h3>
+          <p>
+            IDEs (VS Code, PyCharm), packet analysers (Wireshark), DB tools (MySQL Workbench),
+            version control (Git), container tools (Docker), cloud consoles (AWS/GCP/Azure).
+          </p>
+        </article>
+
+        <article>
+          <h3>Typical career paths</h3>
+          <p>
+            Junior developer → Senior dev → Tech lead / Architect; Network engineer → Security engineer;
+            Sysadmin → DevOps engineer; Data analyst → Data engineer → Data scientist.
+          </p>
+        </article>
+
+        <article>
+          <h3>How to start (practical path)</h3>
+          <ol>
+            <li>Learn basics: computer systems, Linux, Git, networking fundamentals.</li>
+            <li>Pick a focus: development, networking, or security.</li>
+            <li>Build projects, use real tools, practice on labs and contribute to open-source.</li>
+          </ol>
+        </article>
+
+        <article>
+          <h3>Best practices</h3>
+          <p>
+            Keep systems updated, use version control, automate repetitive tasks, apply the principle
+            of least privilege, and monitor systems for anomalies.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 BitLine | Designed with ❤️ by professionals</p>
+    <div class="footer-inner">
+      <p>© 2025 BitLine — All rights reserved • Crafted for IT professionals</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
