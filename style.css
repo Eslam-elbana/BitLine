@@ -1,157 +1,214 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
 body {
-  background-color: #0d47a1; /* أزرق فاخر */
+  background-color: #0d1b2a;
   color: white;
-  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header احترافي */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(11, 61, 145, 0.95);
-  color: white;
-  padding: 15px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  background: rgba(13, 27, 42, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 15px 60px;
   z-index: 1000;
-  transition: background-color 0.3s, padding 0.3s;
+  transition: 0.4s;
 }
 
-header.scrolled {
-  background-color: #0b3d91;
-  padding: 10px 0;
-}
-
-nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: auto;
 }
 
-nav .logo {
-  font-size: 2rem;
+.logo {
+  font-size: 1.8rem;
   font-weight: bold;
-  letter-spacing: 1px;
-  color: #64b5f6;
+  color: #00b4d8;
 }
 
-nav ul {
+.nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
 }
 
-nav ul li a {
+.nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
-  padding: 8px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  background-color: #64b5f6;
-  color: #0b3d91;
-  transform: translateY(-2px);
-}
-
-nav ul li a:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00b4d8;
 }
 
 /* Hero Section */
 .hero {
-  text-align: center;
-  padding: 100px 20px;
-  color: white;
+  position: relative;
+  height: 100vh;
+  background-image: url('images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  transition: background-image 1s ease-in-out;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.hero {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 100px 20px;
-  color: white;
-  background-image: url('images/hero-background.jpg'); /* ضع هنا اسم صورتك */
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .hero-content {
-  max-width: 50%;
-  text-align: left;
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+  color: #00b4d8;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #e0e0e0;
 }
 
-.hero-image img {
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+.btn {
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+.btn:hover {
+  background-color: #0077b6;
+  transform: scale(1.05);
+}
 
 /* About Section */
 .about {
-  width: 80%;
-  margin: 50px auto;
+  padding: 100px 60px;
+  background-color: #1b263b;
   text-align: center;
 }
 
 .about h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #00b4d8;
 }
 
 .about p {
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: #d9d9d9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Downloads Page */
+.downloads {
+  padding: 120px 60px;
+  text-align: center;
+  background-color: #0d1b2a;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #1b263b;
+  border-radius: 15px;
+  width: 280px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.download-btn {
+  background-color: #00b4d8;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #0077b6;
 }
 
 /* Footer */
 footer {
-  background-color: #1565c0;
-  color: white;
+  background-color: #1b263b;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
+  padding: 20px;
+  color: #ccc;
 }
 
-/* Downloads Page */
-.downloads-hero {
-  text-align: center;
-  padding: 100px 20px;
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s forwards;
 }
 
-/* Hero Background Transition handled in JS */
+.fade-in-delay {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s forwards 0.5s;
+}
 
+.fade-in-delay2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s forwards 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
