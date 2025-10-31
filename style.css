@@ -179,3 +179,21 @@ footer {
   background: #060b20;
   color: #a0b6ff;
 }
+
+.credit {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #7bb6ff;
+  letter-spacing: 0.5px;
+}
+
+.author {
+  font-weight: bold;
+  color: #5ea0ff;
+  background: linear-gradient(90deg, #5ea0ff, #3c7aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite linear;
+}
+
+
