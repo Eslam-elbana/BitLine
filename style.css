@@ -87,25 +87,39 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-.hero p {
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px 20px;
+  color: white;
+  background-image: url('images/hero-background.jpg'); /* ضع هنا اسم صورتك */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero-content {
+  max-width: 50%;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
-.btn, .download-btn {
-  background-color: #64b5f6;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.hero-image img {
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
-.btn:hover, .download-btn:hover {
-  background-color: #42a5f5;
-}
 
 /* About Section */
 .about {
@@ -140,3 +154,4 @@ footer {
 }
 
 /* Hero Background Transition handled in JS */
+
