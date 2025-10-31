@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BitLine - Downloads</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BitLine | Downloads</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">BitLine</div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="downloads.html" class="active">Downloads</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="downloads-hero">
-      <h1>Download Your Software Instantly</h1>
-      <p>Click the button below to download our essential IT tools in seconds.</p>
-      <button class="download-btn" onclick="startDownload()">Download Now</button>
-    </section>
-  </main>
+  <section class="downloads">
+    <h1>Download Center</h1>
+    <p>Select a tool and start downloading instantly.</p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="images/tool1.jpg" alt="Tool 1" />
+        <h3>Code Editor</h3>
+        <button class="download-btn" onclick="startDownload()">Download</button>
+      </div>
+      <div class="card">
+        <img src="images/tool2.jpg" alt="Tool 2" />
+        <h3>Security Suite</h3>
+        <button class="download-btn" onclick="startDownload()">Download</button>
+      </div>
+      <div class="card">
+        <img src="images/tool3.jpg" alt="Tool 3" />
+        <h3>Network Tools</h3>
+        <button class="download-btn" onclick="startDownload()">Download</button>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 BitLine. All rights reserved.</p>
+    <p>© 2025 BitLine | All Rights Reserved</p>
   </footer>
 
   <script src="script.js"></script>
