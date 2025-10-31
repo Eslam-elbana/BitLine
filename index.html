@@ -1,169 +1,51 @@
-// translations.js (يمكن فصل هذا إلى ملف منفصل للترجمات)
-const translations = new Map([
-  ['en', {
-    heroTitle: "Welcome to <span class='highlight'>BitLine</span>",
-    aboutTitle: "About IT",
-    aboutText: "The IT department is the backbone of any modern organization, focusing on networking, programming, databases, and cybersecurity — preparing professionals for the digital future.",
-    downloadsTitle: "Downloads",
-    contactTitle: "Contact Us",
-    aboutMeTitle: "About the Developer",
-    footerText: "All rights reserved © BitLine — Designed by Eslam Elbana",
-    typingTexts: [
-      "Welcome to BitLine — The Future of IT Excellence 💻",
-      "Explore programs, drivers, and complete media tools.",
-      "Discover the world of Information Technology with us 🚀"
-    ]
-  }],
-  ['ar', {
-    heroTitle: "قسم <span class='highlight'>تكنولوجيا المعلومات</span>",
-    aboutTitle: "ما هو قسم الـ IT؟",
-    aboutText: "قسم تكنولوجيا المعلومات هو القلب النابض لأي مؤسسة عصرية. يختص بدراسة الشبكات، البرمجة، قواعد البيانات، والأمن السيبراني. يهدف القسم إلى إعداد كوادر قادرة على التعامل مع التكنولوجيا الحديثة وتطوير حلول ذكية للمشكلات التقنية.",
-    downloadsTitle: "تحميل البرامج",
-    contactTitle: "تواصل معنا",
-    aboutMeTitle: "عن المصمم",
-    footerText: "جميع الحقوق محفوظة © لموقع BitLine — تصميم: إسلام البنا",
-    typingTexts: [
-      "مرحبًا بك في BitLine — مستقبل التميز في تكنولوجيا المعلومات 💻",
-      "استكشف البرامج، السائقين، وأدوات الوسائط الكاملة.",
-      "اكتشف عالم تكنولوجيا المعلومات معنا 🚀"
-    ]
-  }]
-]);
+/**
+ * @fileoverview Main entry point for the BitLine website.
+ */
 
-// typing.js (يمكن فصل هذا إلى ملف منفصل للتأثير المتحرك)
-class TypingEffect {
-  constructor(elementId, texts, speed = 80, deleteSpeed = 40, pause = 1500) {
-    this.element = document.getElementById(elementId);
-    if (!this.element) throw new Error(`Element with ID '${elementId}' not found.`);
-    this.texts = texts;
-    this.speed = speed;
-    this.deleteSpeed = deleteSpeed;
-    this.pause = pause;
-    this.textIndex = 0;
-    this.charIndex = 0;
-    this.isDeleting = false;
-    this.isRunning = false;
-  }
+import { translations } from './translations.js';
+import { TypingEffect } from './typing.js';
+import { LanguageManager } from './language.js';
 
-  start() {
-    if (this.isRunning) return;
-    this.isRunning = true;
-    this.type();
-  }
-
-  stop() {
-    this.isRunning = false;
-  }
-
-  updateTexts(newTexts) {
-    this.texts = newTexts;
-    this.reset();
-    this.start();
-  }
-
-  reset() {
-    this.textIndex = 0;
-    this.charIndex = 0;
-    this.isDeleting = false;
-  }
-
-  type() {
-    if (!this.isRunning) return;
-
-    const currentText = this.texts[this.textIndex];
-    this.element.textContent = currentText.substring(0, this.charIndex);
-
-    if (!this.isDeleting && this.charIndex < currentText.length) {
-      this.charIndex++;
-      requestAnimationFrame(() => setTimeout(() => this.type(), this.speed));
-    } else if (this.isDeleting && this.charIndex > 0) {
-      this.charIndex--;
-      requestAnimationFrame(() => setTimeout(() => this.type(), this.deleteSpeed));
-    } else {
-      this.isDeleting = !this.isDeleting;
-      if (!this.isDeleting) this.textIndex = (this.textIndex + 1) % this.texts.length;
-      setTimeout(() => this.type(), this.pause);
+/**
+ * Throttles a function to limit execution frequency.
+ * @param {Function} func - The function to throttle.
+ * @param {number} limit - Time limit in ms.
+ * @returns {Function} Throttled function.
+ */
+function throttle(func, limit) {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
     }
-  }
+  };
 }
 
-// language.js (يمكن فصل هذا إلى ملف منفصل لإدارة اللغات)
-class LanguageManager {
-  constructor(langBtnId, defaultLang = 'en') {
-    this.langBtn = document.getElementById(langBtnId);
-    if (!this.langBtn) throw new Error(`Language button with ID '${langBtnId}' not found.`);
-    this.currentLang = defaultLang;
-    this.selectors = {
-      heroTitle: ".hero-text h1",
-      aboutTitle: ".about h2",
-      aboutText: ".about p",
-      downloadsTitle: ".downloads h2",
-      contactTitle: ".contact h2",
-      aboutMeTitle: ".aboutme h2",
-      footerText: "footer p"
-    };
-    this.typingEffect = null; // سيتم ربطه لاحقًا
-    this.init();
-  }
-
-  init() {
-    this.langBtn.addEventListener('click', () => this.toggleLanguage());
-    this.updateUI();
-  }
-
-  setTypingEffect(typingEffect) {
-    this.typingEffect = typingEffect;
-  }
-
-  toggleLanguage() {
-    this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
-    this.updateUI();
-    if (this.typingEffect) {
-      this.typingEffect.updateTexts(translations.get(this.currentLang).typingTexts);
-    }
-  }
-
-  updateUI() {
-    const trans = translations.get(this.currentLang);
-    if (!trans) return;
-
-    // تحديث النصوص
-    Object.keys(this.selectors).forEach(key => {
-      const element = document.querySelector(this.selectors[key]);
-      if (element) {
-        if (key === 'heroTitle') {
-          element.innerHTML = trans[key];
-        } else {
-          element.textContent = trans[key];
-        }
-      }
-    });
-
-    // تحديث زر اللغة واتجاه الصفحة
-    this.langBtn.textContent = this.currentLang === 'en' ? 'AR' : 'EN';
-    document.body.style.direction = this.currentLang === 'ar' ? 'rtl' : 'ltr';
-  }
-}
-
-// main.js (الملف الرئيسي - يمكن وضع هذا في نهاية HTML أو ملف منفصل)
 document.addEventListener("DOMContentLoaded", () => {
   try {
-    // إنشاء تأثير الكتابة المتحركة
+    // Initialize typing effect
     const typingEffect = new TypingEffect("typing-text", translations.get('en').typingTexts);
     typingEffect.start();
 
-    // إنشاء مدير اللغات
+    // Initialize language manager
     const langManager = new LanguageManager("lang-btn");
     langManager.setTypingEffect(typingEffect);
 
-    // تأثير الهيدر عند التمرير
+    // Throttled scroll event for header effect
     const header = document.querySelector("header");
     if (header) {
-      window.addEventListener("scroll", () => {
+      const throttledScroll = throttle(() => {
         header.classList.toggle("scrolled", window.scrollY > 50);
-      });
+      }, 100);
+      window.addEventListener("scroll", throttledScroll);
     }
+
+    console.log("BitLine website initialized successfully.");
   } catch (error) {
     console.error("Error initializing BitLine website:", error);
+    // Optional: Show user-friendly error message
+    alert("An error occurred while loading the page. Please refresh.");
   }
 });
