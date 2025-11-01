@@ -1,76 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BitLine — Downloads</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BIT LINE - تعلم تكنولوجيا المعلومات</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body, html{font-family:'Roboto',sans-serif;direction:rtl;scroll-behavior:smooth;background:#0b0c1a;color:#fff;}
+
+  /* Navbar */
+  nav{
+    position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;
+    padding:15px 30px;background:rgba(15,20,50,0.95);z-index:1000;box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  }
+  nav .logo{font-size:1.8em;color:#ff8c42;font-weight:700;}
+  nav ul{display:flex;gap:20px;list-style:none;}
+  nav ul li a{text-decoration:none;color:#fff;font-weight:500;transition:color 0.3s;}
+  nav ul li a:hover, nav ul li a.active{color:#ff8c42;}
+  nav ul li button{background:#ff8c42;color:#fff;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;transition:0.3s;}
+  nav ul li button:hover{background:#ff7043;}
+
+  /* Hero Section */
+  .hero{
+    height:100vh;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;
+  }
+  .hero h1{font-size:3em;color:#ff8c42;margin-bottom:20px;}
+  .hero .typed-text{font-size:1.5em;color:#ddd;height:30px;margin-bottom:20px;}
+  .hero button{padding:10px 20px;border:none;border-radius:5px;background:#ff8c42;color:#fff;font-size:1em;cursor:pointer;transition:0.3s;}
+  .hero button:hover{background:#ff7043;}
+
+  /* Canvas Background */
+  #bg-canvas-wrap{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden;}
+  #bg-canvas{width:100%;height:100%;display:block;}
+
+  /* Sections */
+  section{padding:120px 20px;max-width:1000px;margin:0 auto;}
+  .section{background:rgba(255,255,255,0.05);backdrop-filter:blur(8px);padding:25px;margin-bottom:25px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.3);transition:transform 0.3s;}
+  .section:hover{transform:translateY(-5px);}
+  .section h2{color:#ff8c42;margin-bottom:15px;font-size:2em;}
+  .section p{color:#ddd;line-height:1.6;}
+
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px;}
+  .card{background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:0.3s;}
+  .card:hover{transform:translateY(-5px);}
+  .card img{width:100%;border-radius:10px;margin-bottom:15px;}
+  .card h3{color:#ff8c42;margin-bottom:10px;}
+  .card p{color:#ddd;margin-bottom:15px;}
+  .card button{padding:8px 15px;border:none;border-radius:5px;background:#ff8c42;color:#fff;cursor:pointer;transition:0.3s;}
+  .card button:hover{background:#ff7043;}
+
+  /* Chatbot */
+  #chatbot{position:fixed;bottom:20px;right:20px;width:300px;background:rgba(15,20,50,0.95);border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+  #chatbot-header{padding:10px;background:#ff8c42;border-radius:12px 12px 0 0;font-weight:bold;text-align:center;}
+  #chatbot-messages{padding:10px;height:200px;overflow-y:auto;color:#fff;font-size:0.9em;}
+  #chatbot-input{width:calc(100% - 70px);padding:8px;margin:5px;border:none;border-radius:5px;}
+  #chatbot button{width:60px;padding:8px;margin:5px;border:none;border-radius:5px;background:#ff8c42;color:#fff;cursor:pointer;}
+  #chatbot button:hover{background:#ff7043;}
+
+  /* Footer */
+  footer{background:rgba(15,20,50,0.95);text-align:center;padding:15px;margin-top:30px;}
+</style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">BitLine</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="downloads.html" class="active">Downloads</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div id="bg-canvas-wrap">
-    <canvas id="networkCanvas2"></canvas>
-  </div>
+<!-- Navbar -->
+<nav>
+  <div class="logo">BIT LINE</div>
+  <ul>
+    <li><a href="#hero" class="active">الرئيسية</a></li>
+    <li><a href="#about">من أنا</a></li>
+    <li><a href="#networking">الشبكات</a></li>
+    <li><a href="#servers">السيرفرات</a></li>
+    <li><a href="#cybersecurity">أمان المعلومات</a></li>
+    <li><a href="#programming">البرمجة</a></li>
+    <li><button onclick="toggleLang()">EN/AR</button></li>
+  </ul>
+</nav>
 
-  <main>
-    <section class="downloads">
-      <h1>Download Center</h1>
-      <p class="downloads-intro">Select a reliable tool and download from the official source.</p>
+<!-- Hero Section -->
+<div class="hero" id="hero">
+  <h1>مرحبًا بك في BIT LINE</h1>
+  <div class="typed-text" id="typed"></div>
+  <button onclick="scrollToSection('about')">تعرف عليّا</button>
+</div>
 
-      <div class="cards">
-        <div class="card">
-          <img src="images/tool1.jpg" alt="VS Code">
-          <h3>VS Code</h3>
-          <p>Lightweight, powerful source-code editor from Microsoft.</p>
-          <button class="download-btn" onclick="startDownload('https://code.visualstudio.com/Download')">Download</button>
-        </div>
+<!-- Canvas Background -->
+<div id="bg-canvas-wrap">
+  <canvas id="bg-canvas"></canvas>
+</div>
 
-        <div class="card">
-          <img src="images/tool2.jpg" alt="Avast">
-          <h3>Avast Security</h3>
-          <p>Security suite to protect endpoints and devices.</p>
-          <button class="download-btn" onclick="startDownload('https://www.avast.com/en-us/index')">Download</button>
-        </div>
+<!-- About Me Section -->
+<section id="about" class="section">
+  <h2>عن إسلام البنا</h2>
+  <p>أنا إسلام البنا، أعمل في مجال تكنولوجيا المعلومات. هدفي هو مساعدة الناس على فهم الشبكات، السيرفرات، الأمان، والبرمجة بطريقة مبسطة وجذابة.</p>
+</section>
 
-        <div class="card">
-          <img src="images/tool3.jpg" alt="Wireshark">
-          <h3>Wireshark</h3>
-          <p>Network protocol analyser for troubleshooting and analysis.</p>
-          <button class="download-btn" onclick="startDownload('https://www.wireshark.org/download.html')">Download</button>
-        </div>
-
-        <div class="card">
-          <img src="images/tool4.jpg" alt="PyCharm">
-          <h3>PyCharm</h3>
-          <p>Professional Python IDE with smart code assistance.</p>
-          <button class="download-btn" onclick="startDownload('https://www.jetbrains.com/pycharm/download')">Download</button>
-        </div>
-
-        <div class="card">
-          <img src="images/tool5.jpg" alt="MySQL Workbench">
-          <h3>MySQL Workbench</h3>
-          <p>Design, model and manage MySQL databases.</p>
-          <button class="download-btn" onclick="startDownload('https://dev.mysql.com/downloads/workbench/')">Download</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <p>© 2025 BitLine — Download Center</p>
+<!-- Networking Section -->
+<section id="networking" class="section">
+  <h2>الشبكات Networking</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="images/networking.jpg" alt="Networking">
+      <h3>مقدمة الشبكات</h3>
+      <p>تعرف على أساسيات الشبكات، البروتوكولات، وأجهزة الشبكة.</p>
+      <button onclick="alert('اقرأ المزيد عن الشبكات')">اقرأ المزيد</button>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- Servers Section -->
+<section id="servers" class="section">
+  <h2>السيرفرات Servers</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="images/servers.jpg" alt="Servers">
+      <h3>إدارة السيرفرات</h3>
+      <p>تعلم كيفية إدارة السيرفرات، قواعد البيانات، والنسخ الاحتياطي.</p>
+      <button onclick="alert('اقرأ المزيد عن السيرفرات')">اقرأ المزيد</button>
+    </div>
+  </div>
+</section>
+
+<!-- Cybersecurity Section -->
+<section id="cybersecurity" class="section">
+  <h2>أمان المعلومات Cybersecurity</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="images/cybersecurity.jpg" alt="Cybersecurity">
+      <h3>حماية البيانات</h3>
+      <p>تعرف على حماية الأنظمة والمعلومات ضد الاختراق والهجمات.</p>
+      <button onclick="alert('اقرأ المزيد عن الأمان')">اقرأ المزيد</button>
+    </div>
+  </div>
+</section>
+
+<!-- Programming Section -->
+<section id="programming" class="section">
+  <h2>البرمجة Programming</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="images/programming.jpg" alt="Programming">
+      <h3>أساسيات البرمجة</h3>
+      <p>تعلم لغات البرمجة الأساسية لتطوير التطبيقات والمواقع.</p>
+      <button onclick="alert('اقرأ المزيد عن البرمجة')">اقرأ المزيد</button>
+    </div>
+  </div>
+</section>
+
+<!-- Chatbot Widget -->
+<div id="chatbot">
+  <div id="chatbot-header">اسألني عن IT</div>
+  <div id="chatbot-messages"></div>
+  <input type="text" id="chatbot-input" placeholder="اكتب سؤالك هنا...">
+  <button onclick="sendMessage()">إرسال</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 BIT LINE — تصميم إسلام البنا</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  // Typed.js effect
+  var typed = new Typed('#typed', {
+    strings: ["تعلم الشبكات بطريقة مبسطة!", "تعرف على السيرفرات والأمان!", "ابدأ البرمجة وطور مهاراتك!"],
+    typeSpeed: 50,
+    backSpeed: 25,
+    loop: true
+  });
+
+  // Smooth scroll button
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
+
+  // Canvas background animation
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const points = [];
+  for(let i=0;i<60;i++){
+    points.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, dx:(Math.random()-0.5)*1.2, dy:(Math.random()-0.5)*1.2});
+  }
+  function animateCanvas(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    points.forEach(p=>{
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,2,0,Math.PI*2);
+      ctx.fillStyle="rgba(255,140,66,0.5)";
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if(p.x<0||p.x>canvas.width)p.dx*=-1;
+      if(p.y<0||p.y>canvas.height)p.dy*=-1;
+    });
+    requestAnimationFrame(animateCanvas);
+  }
+  animateCanvas();
+
+  // Chatbot logic
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  function sendMessage(){
+    const input = document.getElementById('chatbot-input');
+    const message = input.value.trim();
+    if(!message) return;
+
+    const userMsg = document.createElement('div');
+    userMsg.textContent = "أنت: " + message;
+    chatbotMessages.appendChild(userMsg);
+
+    const botMsg = document.createElement('div');
+    botMsg.textContent = "BIT LINE AI: " + generateAIResponse(message);
+    chatbotMessages.appendChild(botMsg);
+
+    input.value = '';
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function generateAIResponse(msg){
+    msg = msg.toLowerCase();
+    if(msg.includes("شبكات")) return "ابدأ بتعلم أساسيات TCP/IP وأجهزة الشبكة مثل Routers وSwitches.";
+    if(msg.includes("سيرفرات")) return "تعلم إدارة السيرفرات، النسخ الاحتياطي، وقواعد البيانات.";
+    if(msg.includes("أمان") || msg.includes("سيبر")) return "ابدأ بحماية الأنظمة، واستخدام Firewalls وAntivirus.";
+    if(msg.includes("برمجة")) return "ابدأ بتعلم Python أو JavaScript لإنشاء تطبيقات ومشاريع عملية.";
+    return "أرحب بسؤالك! سأحاول مساعدتك بأفضل طريقة ممكنة.";
+  }
+
+  // Language toggle (dummy)
+  function toggleLang(){alert('Change language AR/EN');}
+</script>
 </body>
 </html>
