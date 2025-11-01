@@ -1,228 +1,110 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BITLINE - تكنولوجيا المعلومات</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    direction: rtl;
-    scroll-behavior: smooth;
-    background: #0b0c1a;
-    color: #fff;
-  }
-
-  /* Navbar */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(15,20,50,0.95);
-    padding: 15px 30px;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-  nav h1 {
-    margin: 0;
-    font-size: 1.8em;
-    color: #ff8c42;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  nav ul li a:hover {
-    color: #ff8c42;
-  }
-
-  /* خلفية متحركة */
-  .background {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  .background span {
-    position: absolute;
-    display: block;
-    border-radius: 50%;
-    background: rgba(255,140,66,0.2);
-    animation: move 15s linear infinite;
-  }
-  @keyframes move {
-    0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
-    100% { transform: translateY(-100vh) translateX(50vw) rotate(360deg); }
-  }
-
-  section {
-    padding: 120px 20px 80px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .hero {
-    text-align: center;
-  }
-  .hero h2 {
-    font-size: 3em;
-    color: #ff8c42;
-    margin-bottom: 10px;
-  }
-  .hero p {
-    font-size: 1.3em;
-    color: #ddd;
-  }
-
-  .section {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-  }
-  .section:hover { transform: translateY(-5px); }
-  .section h2 { color: #ff8c42; font-size: 2em; margin-top:0; }
-
-  .accordion-item { border-top: 1px solid rgba(255,255,255,0.2); }
-  .accordion-header {
-    padding: 15px; cursor: pointer; font-weight: bold; color: #fff;
-    transition: background 0.3s ease;
-  }
-  .accordion-header:hover { background: rgba(255,140,66,0.2); }
-  .accordion-content { padding: 15px; display: none; color: #ddd; }
-
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BitLine — IT Learning</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">BitLine</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="networking.html">Networking</a></li>
+        <li><a href="servers.html">Servers</a></li>
+        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="programming.html">Programming</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="background" id="background"></div>
-
-<nav>
-  <h1>BITLINE</h1>
-  <ul>
-    <li><a href="#home">الرئيسية</a></li>
-    <li><a href="#networking">الشبكات</a></li>
-    <li><a href="#servers">السيرفرات</a></li>
-    <li><a href="#cybersecurity">أمن المعلومات</a></li>
-    <li><a href="#programming">البرمجة</a></li>
-  </ul>
-</nav>
-
-<section id="home" class="hero">
-  <h2>مرحباً بك في BITLINE</h2>
-  <p>استكشف عالم تكنولوجيا المعلومات، الشبكات، السيرفرات، الأمن السيبراني، والبرمجة بأسلوب احترافي وجذاب.</p>
-</section>
-
-<section id="networking" class="section">
-  <h2>الشبكات Networking</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header">مقدمة الشبكات</div>
-      <div class="accordion-content">
-        <p>الشبكات هي العمود الفقري لأي بنية تحتية تقنية. تتضمن التصميم، الإدارة، البروتوكولات، وصيانة الاتصال بين الأجهزة.</p>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header">الأدوات الشائعة</div>
-      <div class="accordion-content">
-        <p>Switches, Routers, Firewalls, Wi-Fi Access Points, Network Monitoring Tools.</p>
-      </div>
-    </div>
+  <div id="bg-canvas-wrap">
+    <canvas id="networkCanvas"></canvas>
   </div>
-</section>
 
-<section id="servers" class="section">
-  <h2>السيرفرات Servers</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header">أنواع السيرفرات</div>
-      <div class="accordion-content">
-        <p>هناك سيرفرات ملفات، قواعد بيانات، تطبيقات، وخوادم ويب.</p>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header">إدارة السيرفرات</div>
-      <div class="accordion-content">
-        <p>تتضمن التثبيت، الصيانة، النسخ الاحتياطي، وتأمين البيانات.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <main>
+    <section class="learning-center">
+      <h1>IT Learning Center</h1>
+      <p class="intro">Explore different IT domains and expand your knowledge in Networking, Servers, Cybersecurity, and Programming.</p>
 
-<section id="cybersecurity" class="section">
-  <h2>أمن المعلومات Cybersecurity</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header">حماية البيانات</div>
-      <div class="accordion-content">
-        <p>تأمين المعلومات ضد الهجمات الإلكترونية، النسخ الاحتياطي، والتحقق من سلامة الشبكة.</p>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header">أدوات الأمن</div>
-      <div class="accordion-content">
-        <p>Antivirus, Firewalls, IDS/IPS, VPNs, Security Monitoring Tools.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="cards">
+        <div class="card">
+          <img src="images/networking.jpg" alt="Networking">
+          <h3>Networking</h3>
+          <p>Learn how networks work, including switches, routers, and protocols.</p>
+          <button class="learn-btn" onclick="goToSection('networking.html')">Learn More</button>
+        </div>
 
-<section id="programming" class="section">
-  <h2>البرمجة Programming</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header">لغات البرمجة</div>
-      <div class="accordion-content">
-        <p>Python, JavaScript, Java, C#, PHP وغيرها لإنشاء تطبيقات ومواقع وبرمجيات.</p>
+        <div class="card">
+          <img src="images/servers.jpg" alt="Servers">
+          <h3>Servers</h3>
+          <p>Understand server management, databases, and infrastructure basics.</p>
+          <button class="learn-btn" onclick="goToSection('servers.html')">Learn More</button>
+        </div>
+
+        <div class="card">
+          <img src="images/cybersecurity.jpg" alt="Cybersecurity">
+          <h3>Cybersecurity</h3>
+          <p>Protect systems and data from cyber threats and learn security best practices.</p>
+          <button class="learn-btn" onclick="goToSection('cybersecurity.html')">Learn More</button>
+        </div>
+
+        <div class="card">
+          <img src="images/programming.jpg" alt="Programming">
+          <h3>Programming</h3>
+          <p>Develop software and applications using popular programming languages.</p>
+          <button class="learn-btn" onclick="goToSection('programming.html')">Learn More</button>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2025 BitLine — IT Learning Center</p>
     </div>
-    <div class="accordion-item">
-      <div class="accordion-header">تطوير التطبيقات</div>
-      <div class="accordion-content">
-        <p>تطوير تطبيقات سطح المكتب، الويب، والموبايل باستخدام أفضل الممارسات الحديثة.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<script>
-  // أكورديون
-  const headers = document.querySelectorAll('.accordion-header');
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
-  });
+  <script>
+    // Canvas Background Animation
+    const canvas = document.getElementById('networkCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  // خلفية عشوائية متحركة
-  const bg = document.getElementById('background');
-  for(let i=0;i<40;i++){
-    const span = document.createElement('span');
-    span.style.left = Math.random()*100 + "vw";
-    span.style.width = span.style.height = 5+Math.random()*20+"px";
-    span.style.animationDuration = 10+Math.random()*15+"s";
-    bg.appendChild(span);
-  }
-</script>
+    const circles = [];
+    for(let i=0;i<50;i++){
+      circles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        radius: 2+Math.random()*4,
+        dx: (Math.random()-0.5)*1.5,
+        dy: (Math.random()-0.5)*1.5
+      });
+    }
 
+    function animate(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      circles.forEach(c=>{
+        ctx.beginPath();
+        ctx.arc(c.x,c.y,c.radius,0,Math.PI*2);
+        ctx.fillStyle="rgba(255,140,66,0.5)";
+        ctx.fill();
+        c.x += c.dx;
+        c.y += c.dy;
+
+        if(c.x<0 || c.x>canvas.width) c.dx*=-1;
+        if(c.y<0 || c.y>canvas.height) c.dy*=-1;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    function goToSection(url){
+      window.location.href = url;
+    }
+  </script>
 </body>
 </html>
