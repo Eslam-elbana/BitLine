@@ -1,156 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BitLine - IT Hub</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/906/906324.png">
-  
-  <!-- SEO -->
-  <meta name="description" content="BitLine by Eslam Elbana — your IT hub for software downloads, tutorials, and tech insights.">
-  <meta name="keywords" content="BitLine, IT, Eslam Elbana, software, downloads, technology, drivers, media, PDF, browsers">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تكنولوجيا المعلومات</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    direction: rtl;
+  }
+  header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  header p {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+  .content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .section h2 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  .section p {
+    line-height: 1.6;
+  }
+  .accordion {
+    margin-top: 10px;
+  }
+  .accordion-item {
+    border-top: 1px solid #ddd;
+  }
+  .accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    background-color: #ecf0f1;
+  }
+  .accordion-content {
+    padding: 15px;
+    display: none;
+    background-color: #fff;
+  }
+</style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1 class="logo">BitLine</h1>
-    <nav>
-      <ul>
-        <li><a href="#about" data-en="About IT" data-ar="عن القسم">About IT</a></li>
-        <li><a href="#downloads" data-en="Downloads" data-ar="البرامج">Downloads</a></li>
-        <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
-        <li><a href="#aboutme" data-en="About Me" data-ar="عن المصمم">About Me</a></li>
-      </ul>
-    </nav>
-    <button id="lang-btn">العربية</button>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Welcome to <span class="highlight">BitLine</span></h1>
-      <p id="typing-text"></p>
-    </div>
-  </section>
+<header>
+  <h1>تكنولوجيا المعلومات</h1>
+  <p>اكتشف أساسيات الشبكات، السيرفرات، الأمان، والبرمجة بأسلوب مبسط</p>
+</header>
 
-  <!-- About IT -->
-  <section id="about" class="about">
-    <h2>What is Information Technology (IT)?</h2>
-    <p>
-      Information Technology (IT) is the backbone of our digital world — powering businesses, networks, and innovation. 
-      It includes software development, networking, databases, cybersecurity, and more. 
-      Understanding IT means understanding the future itself.
-    </p>
-  </section>
+<div class="content">
 
-  <!-- Software Library -->
-  <section id="downloads" class="downloads">
-    <h2>IT Software Library</h2>
-    <p>Explore essential tools for professionals and learners in one click.</p>
+  <div class="section">
+    <h2>مقدمة عن IT</h2>
+    <p>تكنولوجيا المعلومات تشمل كل ما يتعلق بالحواسيب، الشبكات، البرمجيات، وأمن المعلومات. هدفها تحسين الأداء وتحقيق الكفاءة في الأعمال اليومية والتقنية.</p>
+  </div>
 
-    <div class="categories">
-      <div class="category">
-        <h3>🌐 Browsers</h3>
-        <div class="cards">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282023%29.svg" alt="Chrome">
-            <h4>Google Chrome</h4>
-            <p>Fast and secure web browsing.</p>
-            <a href="https://www.google.com/chrome/" target="_blank" class="btn">Download</a>
-          </div>
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Microsoft_Edge_logo_%282019%29.svg" alt="Edge">
-            <h4>Microsoft Edge</h4>
-            <p>Modern browser from Microsoft.</p>
-            <a href="https://www.microsoft.com/edge" target="_blank" class="btn">Download</a>
-          </div>
+  <div class="section">
+    <h2>أقسام تكنولوجيا المعلومات</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">الشبكات Networking</div>
+        <div class="accordion-content">
+          <p>تغطي تصميم وإدارة الشبكات، البروتوكولات، وصيانة الاتصال بين الأجهزة.</p>
         </div>
       </div>
-
-      <div class="category">
-        <h3>🎵 Media Players</h3>
-        <div class="cards">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/VLC_icon.svg" alt="VLC">
-            <h4>VLC Media Player</h4>
-            <p>Play any format seamlessly.</p>
-            <a href="https://www.videolan.org/vlc/" target="_blank" class="btn">Download</a>
-          </div>
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Windows_Media_Player_11_logo.png" alt="WMP">
-            <h4>Windows Media Player</h4>
-            <p>Classic and reliable player.</p>
-            <a href="https://support.microsoft.com/en-us/windows/windows-media-player" target="_blank" class="btn">Download</a>
-          </div>
+      <div class="accordion-item">
+        <div class="accordion-header">السيرفرات Servers</div>
+        <div class="accordion-content">
+          <p>إدارة الخوادم، تخزين البيانات، والقيام بالمهام الأساسية للشركات والمؤسسات.</p>
         </div>
       </div>
-
-      <div class="category">
-        <h3>📄 PDF Tools</h3>
-        <div class="cards">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="Adobe">
-            <h4>Adobe Acrobat Reader</h4>
-            <p>View and manage PDF files.</p>
-            <a href="https://get.adobe.com/reader/" target="_blank" class="btn">Download</a>
-          </div>
+      <div class="accordion-item">
+        <div class="accordion-header">أمن المعلومات Cybersecurity</div>
+        <div class="accordion-content">
+          <p>حماية المعلومات من الاختراق والهجمات الإلكترونية وضمان سلامة البيانات.</p>
         </div>
       </div>
-
-      <div class="category">
-        <h3>⚙️ Drivers</h3>
-        <div class="cards">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Driver_Booster_Icon.png" alt="Driver Booster">
-            <h4>Driver Booster</h4>
-            <p>Update all PC drivers easily.</p>
-            <a href="https://www.iobit.com/en/driver-booster.php" target="_blank" class="btn">Download</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="category">
-        <h3>🧠 IT Encyclopedia</h3>
-        <div class="cards">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Wikipedia_Icon.png" alt="Wiki">
-            <h4>Wikipedia IT</h4>
-            <p>Global knowledge for IT learners.</p>
-            <a href="https://en.wikipedia.org/wiki/Information_technology" target="_blank" class="btn">Explore</a>
-          </div>
+      <div class="accordion-item">
+        <div class="accordion-header">البرمجة Programming</div>
+        <div class="accordion-content">
+          <p>تطوير البرمجيات والتطبيقات باستخدام لغات البرمجة المختلفة لإنجاز المهام الرقمية.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/xwpezgqz" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+</div>
 
-  <!-- About Me -->
-  <section id="aboutme" class="aboutme">
-    <h2>About the Developer</h2>
-    <p>
-      Hi, I’m <b>Eslam Elbana</b> — an IT specialist passionate about technology, software, and design.  
-      I created <b>BitLine</b> to share my vision of accessible IT knowledge and tools for everyone.
-    </p>
-    <p>Follow my work on <a href="https://github.com" target="_blank">GitHub</a> and <a href="https://linkedin.com" target="_blank">LinkedIn</a>.</p>
-  </section>
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 BitLine | Designed with 💙 for IT Professionals</p>
-    <p class="credit">Created by <span class="author">Eslam Elbana</span></p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
