@@ -177,9 +177,9 @@
 
   // إنشاء عناصر الخلفية المتحركة
   const bg = document.getElementById('background');
-  for(let i = 0; i < 30; i++){
+  for(let i = 0; i < 60; i++){
     const span = document.createElement('span');
-    span.style.left = Math.random() * 100 + "vw";
+    span.style.left = Math.random() * 130 + "vw";
     span.style.width = span.style.height = Math.random() * 20 + 10 + "px";
     span.style.animationDuration = 10 + Math.random()*20 + "s";
     bg.appendChild(span);
@@ -188,4 +188,5 @@
 
 </body>
 </html>
+
 
