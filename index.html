@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BitLine — IT Learning</title>
+  <title>BitLine — Downloads</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,51 +11,55 @@
     <nav class="navbar">
       <div class="logo">BitLine</div>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="networking.html">Networking</a></li>
-        <li><a href="servers.html">Servers</a></li>
-        <li><a href="cybersecurity.html">Cybersecurity</a></li>
-        <li><a href="programming.html">Programming</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="downloads.html" class="active">Downloads</a></li>
       </ul>
     </nav>
   </header>
 
   <div id="bg-canvas-wrap">
-    <canvas id="networkCanvas"></canvas>
+    <canvas id="networkCanvas2"></canvas>
   </div>
 
   <main>
-    <section class="learning-center">
-      <h1>IT Learning Center</h1>
-      <p class="intro">Explore different IT domains and expand your knowledge in Networking, Servers, Cybersecurity, and Programming.</p>
+    <section class="downloads">
+      <h1>Download Center</h1>
+      <p class="downloads-intro">Select a reliable tool and download from the official source.</p>
 
       <div class="cards">
         <div class="card">
-          <img src="images/networking.jpg" alt="Networking">
-          <h3>Networking</h3>
-          <p>Learn how networks work, including switches, routers, and protocols.</p>
-          <button class="learn-btn" onclick="goToSection('networking.html')">Learn More</button>
+          <img src="images/tool1.jpg" alt="VS Code">
+          <h3>VS Code</h3>
+          <p>Lightweight, powerful source-code editor from Microsoft.</p>
+          <button class="download-btn" onclick="startDownload('https://code.visualstudio.com/Download')">Download</button>
         </div>
 
         <div class="card">
-          <img src="images/servers.jpg" alt="Servers">
-          <h3>Servers</h3>
-          <p>Understand server management, databases, and infrastructure basics.</p>
-          <button class="learn-btn" onclick="goToSection('servers.html')">Learn More</button>
+          <img src="images/tool2.jpg" alt="Avast">
+          <h3>Avast Security</h3>
+          <p>Security suite to protect endpoints and devices.</p>
+          <button class="download-btn" onclick="startDownload('https://www.avast.com/en-us/index')">Download</button>
         </div>
 
         <div class="card">
-          <img src="images/cybersecurity.jpg" alt="Cybersecurity">
-          <h3>Cybersecurity</h3>
-          <p>Protect systems and data from cyber threats and learn security best practices.</p>
-          <button class="learn-btn" onclick="goToSection('cybersecurity.html')">Learn More</button>
+          <img src="images/tool3.jpg" alt="Wireshark">
+          <h3>Wireshark</h3>
+          <p>Network protocol analyser for troubleshooting and analysis.</p>
+          <button class="download-btn" onclick="startDownload('https://www.wireshark.org/download.html')">Download</button>
         </div>
 
         <div class="card">
-          <img src="images/programming.jpg" alt="Programming">
-          <h3>Programming</h3>
-          <p>Develop software and applications using popular programming languages.</p>
-          <button class="learn-btn" onclick="goToSection('programming.html')">Learn More</button>
+          <img src="images/tool4.jpg" alt="PyCharm">
+          <h3>PyCharm</h3>
+          <p>Professional Python IDE with smart code assistance.</p>
+          <button class="download-btn" onclick="startDownload('https://www.jetbrains.com/pycharm/download')">Download</button>
+        </div>
+
+        <div class="card">
+          <img src="images/tool5.jpg" alt="MySQL Workbench">
+          <h3>MySQL Workbench</h3>
+          <p>Design, model and manage MySQL databases.</p>
+          <button class="download-btn" onclick="startDownload('https://dev.mysql.com/downloads/workbench/')">Download</button>
         </div>
       </div>
     </section>
@@ -63,48 +67,10 @@
 
   <footer>
     <div class="footer-inner">
-      <p>© 2025 BitLine — IT Learning Center</p>
+      <p>© 2025 BitLine — Download Center</p>
     </div>
   </footer>
 
-  <script>
-    // Canvas Background Animation
-    const canvas = document.getElementById('networkCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const circles = [];
-    for(let i=0;i<50;i++){
-      circles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        radius: 2+Math.random()*4,
-        dx: (Math.random()-0.5)*1.5,
-        dy: (Math.random()-0.5)*1.5
-      });
-    }
-
-    function animate(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      circles.forEach(c=>{
-        ctx.beginPath();
-        ctx.arc(c.x,c.y,c.radius,0,Math.PI*2);
-        ctx.fillStyle="rgba(255,140,66,0.5)";
-        ctx.fill();
-        c.x += c.dx;
-        c.y += c.dy;
-
-        if(c.x<0 || c.x>canvas.width) c.dx*=-1;
-        if(c.y<0 || c.y>canvas.height) c.dy*=-1;
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    function goToSection(url){
-      window.location.href = url;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
