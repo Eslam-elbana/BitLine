@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bit Line</title>
+<title>BITLINE - تكنولوجيا المعلومات</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -12,158 +12,196 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
     direction: rtl;
-    overflow-x: hidden;
-    background: #0f2027;  /* لون أساسي */
+    scroll-behavior: smooth;
+    background: #0b0c1a;
     color: #fff;
+  }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15,20,50,0.95);
+    padding: 15px 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  nav h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #ff8c42;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #ff8c42;
   }
 
   /* خلفية متحركة */
   .background {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: -1;
+    overflow: hidden;
   }
-
   .background span {
     position: absolute;
     display: block;
-    width: 20px;
-    height: 20px;
-    background: rgba(255,255,255,0.15);
-    animation: float 20s linear infinite;
     border-radius: 50%;
+    background: rgba(255,140,66,0.2);
+    animation: move 15s linear infinite;
   }
-
-  @keyframes float {
+  @keyframes move {
     0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
     100% { transform: translateY(-100vh) translateX(50vw) rotate(360deg); }
   }
 
-  header {
-    text-align: center;
-    padding: 80px 20px 50px;
-    background: linear-gradient(135deg, #1f4037, #49f2c8);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
-
-  header h1 {
-    font-size: 3em;
-    margin: 0;
-    color: #fff;
-  }
-
-  header p {
-    font-size: 1.3em;
-    margin-top: 10px;
-    color: #e0f7fa;
-  }
-
-  .content {
+  section {
+    padding: 120px 20px 80px;
     max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 3em;
+    color: #ff8c42;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 1.3em;
+    color: #ddd;
   }
 
   .section {
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
   }
+  .section:hover { transform: translateY(-5px); }
+  .section h2 { color: #ff8c42; font-size: 2em; margin-top:0; }
 
-  .section:hover {
-    transform: translateY(-5px);
-  }
-
-  .section h2 {
-    margin-top: 0;
-    font-size: 2em;
-    color: #00e5ff;
-  }
-
-  .section p {
-    line-height: 1.6;
-    color: #cfd8dc;
-  }
-
-  /* أكورديون */
-  .accordion-item {
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-
+  .accordion-item { border-top: 1px solid rgba(255,255,255,0.2); }
   .accordion-header {
-    padding: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #fff;
+    padding: 15px; cursor: pointer; font-weight: bold; color: #fff;
     transition: background 0.3s ease;
   }
+  .accordion-header:hover { background: rgba(255,140,66,0.2); }
+  .accordion-content { padding: 15px; display: none; color: #ddd; }
 
-  .accordion-header:hover {
-    background: rgba(255,255,255,0.1);
-  }
-
-  .accordion-content {
-    padding: 15px;
-    display: none;
-    color: #b0bec5;
-  }
 </style>
 </head>
 <body>
 
-<!-- خلفية متحركة -->
 <div class="background" id="background"></div>
 
-<header>
-  <h1>تكنولوجيا المعلومات</h1>
-  <p>استكشف الشبكات، السيرفرات، الأمان، والبرمجة بأسلوب حديث وجذاب</p>
-</header>
+<nav>
+  <h1>BITLINE</h1>
+  <ul>
+    <li><a href="#home">الرئيسية</a></li>
+    <li><a href="#networking">الشبكات</a></li>
+    <li><a href="#servers">السيرفرات</a></li>
+    <li><a href="#cybersecurity">أمن المعلومات</a></li>
+    <li><a href="#programming">البرمجة</a></li>
+  </ul>
+</nav>
 
-<div class="content">
-  <div class="section">
-    <h2>مقدمة عن IT</h2>
-    <p>تكنولوجيا المعلومات تشمل كل ما يتعلق بالحواسيب، الشبكات، البرمجيات، وأمن المعلومات. هدفها تحسين الأداء وتحقيق الكفاءة في الأعمال اليومية والتقنية.</p>
-  </div>
+<section id="home" class="hero">
+  <h2>مرحباً بك في BITLINE</h2>
+  <p>استكشف عالم تكنولوجيا المعلومات، الشبكات، السيرفرات، الأمن السيبراني، والبرمجة بأسلوب احترافي وجذاب.</p>
+</section>
 
-  <div class="section">
-    <h2>أقسام تكنولوجيا المعلومات</h2>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-header">الشبكات Networking</div>
-        <div class="accordion-content">
-          <p>تغطي تصميم وإدارة الشبكات، البروتوكولات، وصيانة الاتصال بين الأجهزة.</p>
-        </div>
+<section id="networking" class="section">
+  <h2>الشبكات Networking</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">مقدمة الشبكات</div>
+      <div class="accordion-content">
+        <p>الشبكات هي العمود الفقري لأي بنية تحتية تقنية. تتضمن التصميم، الإدارة، البروتوكولات، وصيانة الاتصال بين الأجهزة.</p>
       </div>
-      <div class="accordion-item">
-        <div class="accordion-header">السيرفرات Servers</div>
-        <div class="accordion-content">
-          <p>إدارة الخوادم، تخزين البيانات، والقيام بالمهام الأساسية للشركات والمؤسسات.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">أمن المعلومات Cybersecurity</div>
-        <div class="accordion-content">
-          <p>حماية المعلومات من الاختراق والهجمات الإلكترونية وضمان سلامة البيانات.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">البرمجة Programming</div>
-        <div class="accordion-content">
-          <p>تطوير البرمجيات والتطبيقات باستخدام لغات البرمجة المختلفة لإنجاز المهام الرقمية.</p>
-        </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">الأدوات الشائعة</div>
+      <div class="accordion-content">
+        <p>Switches, Routers, Firewalls, Wi-Fi Access Points, Network Monitoring Tools.</p>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<section id="servers" class="section">
+  <h2>السيرفرات Servers</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">أنواع السيرفرات</div>
+      <div class="accordion-content">
+        <p>هناك سيرفرات ملفات، قواعد بيانات، تطبيقات، وخوادم ويب.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">إدارة السيرفرات</div>
+      <div class="accordion-content">
+        <p>تتضمن التثبيت، الصيانة، النسخ الاحتياطي، وتأمين البيانات.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cybersecurity" class="section">
+  <h2>أمن المعلومات Cybersecurity</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">حماية البيانات</div>
+      <div class="accordion-content">
+        <p>تأمين المعلومات ضد الهجمات الإلكترونية، النسخ الاحتياطي، والتحقق من سلامة الشبكة.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">أدوات الأمن</div>
+      <div class="accordion-content">
+        <p>Antivirus, Firewalls, IDS/IPS, VPNs, Security Monitoring Tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programming" class="section">
+  <h2>البرمجة Programming</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">لغات البرمجة</div>
+      <div class="accordion-content">
+        <p>Python, JavaScript, Java, C#, PHP وغيرها لإنشاء تطبيقات ومواقع وبرمجيات.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">تطوير التطبيقات</div>
+      <div class="accordion-content">
+        <p>تطوير تطبيقات سطح المكتب، الويب، والموبايل باستخدام أفضل الممارسات الحديثة.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
   // أكورديون
@@ -175,18 +213,16 @@
     });
   });
 
-  // إنشاء عناصر الخلفية المتحركة
+  // خلفية عشوائية متحركة
   const bg = document.getElementById('background');
-  for(let i = 0; i < 60; i++){
+  for(let i=0;i<40;i++){
     const span = document.createElement('span');
-    span.style.left = Math.random() * 130 + "vw";
-    span.style.width = span.style.height = Math.random() * 20 + 10 + "px";
-    span.style.animationDuration = 10 + Math.random()*20 + "s";
+    span.style.left = Math.random()*100 + "vw";
+    span.style.width = span.style.height = 5+Math.random()*20+"px";
+    span.style.animationDuration = 10+Math.random()*15+"s";
     bg.appendChild(span);
   }
 </script>
 
 </body>
 </html>
-
-
