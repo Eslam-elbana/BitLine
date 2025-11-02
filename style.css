@@ -1,151 +1,121 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #061a33;
-  color: #ffffff;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
-header {
-  background: #0b2b52;
-  padding: 15px 40px;
+body {
+  font-family: "Poppins", sans-serif;
+  background: #050b18;
+  color: #e0e0e0;
+}
+
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(0, 10, 30, 0.8);
+  padding: 15px 60px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1fb6ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00bfff;
 }
 
-nav ul {
+.logo span {
+  color: #0077ff;
+}
+
+.navbar ul {
   list-style: none;
   display: flex;
   gap: 25px;
 }
 
-nav a {
+.navbar a {
+  color: #b0d4ff;
   text-decoration: none;
-  color: #cfe9ff;
-  font-weight: bold;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-/* Hero */
+.navbar a:hover,
+.navbar a.active {
+  color: #00bfff;
+}
+
+/* Hero Section */
 .hero {
-  height: 60vh;
-  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80')
-    center/cover no-repeat;
+  height: 90vh;
+  background: url('assets/hero-bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 15, 40, 0.7);
+}
+
+.hero-text {
+  position: relative;
   text-align: center;
+  color: white;
+  max-width: 800px;
   padding: 20px;
 }
 
-.hero-content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  border-radius: 15px;
+.hero-text h1 {
+  font-size: 2.6rem;
+  line-height: 1.4;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-}
-
-.highlight {
-  color: #1fb6ff;
+.hero-text span {
+  color: #00bfff;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 20px;
-  margin-top: 20px;
-  background: #1fb6ff;
-  color: #012033;
+  margin-top: 25px;
+  background: #00bfff;
+  color: #001633;
+  padding: 12px 25px;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* Sections */
-.section {
-  padding: 60px;
-  max-width: 900px;
-  margin: auto;
+.btn:hover {
+  background: #0099cc;
 }
 
-.tutorial-card {
-  background: #0b2b52;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+/* Section */
+.intro {
+  text-align: center;
+  padding: 80px 20px;
+  background: #0b1930;
 }
 
-/* AI Chatbox */
-.ai-chat {
-  background: #0b355c;
-  border-radius: 15px;
-  padding: 30px;
-}
-
-.chat-box {
-  height: 350px;
-  background: #062445;
-  border-radius: 10px;
-  padding: 15px;
-  overflow-y: auto;
+.intro h2 {
+  color: #00bfff;
   margin-bottom: 15px;
 }
 
-.message {
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 10px;
-}
-
-.message.user {
-  background: #1a73e8;
-  text-align: right;
-}
-
-.message.ai {
-  background: #0e4a74;
-  text-align: left;
-}
-
-#chat-form {
-  display: flex;
-  gap: 10px;
-}
-
-#user-input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-}
-
-#chat-form button {
-  padding: 10px 25px;
-  background: #1fb6ff;
-  border: none;
-  border-radius: 10px;
-  color: #012033;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: #0b2b52;
-  margin-top: 40px;
+  background: #021020;
+  font-size: 0.9rem;
+  color: #9ab3c9;
 }
